@@ -1,0 +1,20 @@
+body {
+  background-image: linear-gradient(#2cb97700, #277b7ed2),url('./Components/Images/nasa-n463SoeSiVY-unsplash.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  margin: 0;
+}
+body::-webkit-scrollbar-track {
+  background-color: black;
+  width: 0.5rem;
+}
+body::-webkit-scrollbar-button {
+  color: bisque;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    background-size: 100vh;
+  }
+}

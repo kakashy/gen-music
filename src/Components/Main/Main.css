@@ -1,0 +1,86 @@
+
+@keyframes entranceTing {
+    from {
+        opacity: 0.1;
+        transform: scale(0.1);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes hoveTing {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(20);
+    }
+}
+
+.main {
+    color: white;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(400px));
+
+    justify-content: center;
+
+    transition: 300ms ease-in-out;
+}
+.musicCard {
+    width: 40vw;
+    height: max-content;
+    border-radius: 12px;
+    background-color: rgba(182, 255, 215, 0.5);
+    color: black;
+    display: flex;
+    flex-flow: column;
+    flex-direction: column;
+    align-items: center;
+
+    animation: entranceTing 600ms ease-out;
+    animation-fill-mode: backwards;
+
+    transition: 200ms ease;
+}
+.musicCard:hover {
+    background-color: rgba(182, 255, 215, 0.877);
+    animation: hoveTing 300ms ease-in;
+    animation-fill-mode: backwards;
+    animation: entranceTing 0ms;
+    border-radius: 9px;
+}
+.musicCard:hover img {
+    filter: opacity(1);
+}
+
+.musicCard img {
+    width: inherit;
+    border-radius: inherit;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    filter: opacity(0.7);
+}
+
+.songTitle {
+    font-size: larger;
+}
+.songArtist {
+    color: rgb(73, 73, 73);
+    font-size: medium;
+    float: right;
+}
+
+@media only screen and (max-width: 600px) {
+    .musicCard {
+        width: 50vw;
+        border-radius: 25px;
+    }
+    .main {
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: repeat(auto-fit, minmax(1fr));
+        transition: 200ms ease;
+    }
+}
